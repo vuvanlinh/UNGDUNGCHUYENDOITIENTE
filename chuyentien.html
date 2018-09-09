@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doitien</title>
+</head>
+<script>
+    function Doitien(){
+        let TIEN= document.getElementById("nhapvao").value;
+        TIEN= parseFloat(TIEN);
+
+        let From = document.getElementById("from")[document.getElementById("from").selectedIndex].value;
+        From = parseFloat(From);
+        let Tygia = document.getElementById("to")[document.getElementById("to").selectedIndex].value;
+        Tygia = parseFloat(Tygia);
+
+        let kq = (TIEN*Tygia)/From;
+
+        document.getElementById("output").innerHTML = kq;
+    }
+</script>
+<body>
+<form>
+    Amount<br>
+    <input id="nhapvao" type="number" name="nhapvao"/>
+<select id= "from" name="country">
+    <option value="23000">VND</option>
+    <option value="1">USD</option>
+
+
+</select>
+<select id= "to" name="country">
+    <option value="1">USD</option>
+    <option value="23000">VND</option>
+</select>
+<button type="button" id="doitien" onclick="Doitien()">CONVERT</button><br><br>
+    ket qua:
+<output id="output"></output>
+
+</form>
+</body>
+</html>
